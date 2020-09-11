@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="FreeRTR Demo Lab" id="f6db6625-6bef-41d9-92bb-ed03b17b88b2" version="1" scripttimeout="300" countdown="0" lock="0" author="Nick Buraglio">
+  <description>Demo Lab for Freertr</description>
+  <topology>
+    <nodes>
+      <node id="1" name="freertr1" type="qemu" template="linux" image="linux-freertr-20.8.1" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="8" uuid="32a7408e-11f3-4545-9dde-f53e8ecae155" shutdown="1" firstmac="50:06:00:01:00:00" qemu_nic="e1000" delay="0" icon="Router.png" config="0" left="489" top="417">
+        <interface id="0" name="e0" type="ethernet" network_id="1"/>
+        <interface id="1" name="e1" type="ethernet" network_id="5"/>
+        <interface id="2" name="e2" type="ethernet" network_id="4"/>
+        <interface id="7" name="e7" type="ethernet" network_id="7"/>
+      </node>
+      <node id="2" name="freertr2" type="qemu" template="linux" image="linux-freertr-20.8.1" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="8" uuid="d74eb5d8-e48d-4ea1-bf4b-231952db0785" shutdown="1" firstmac="50:06:00:02:00:00" qemu_nic="e1000" delay="0" icon="Router.png" config="0" left="492" top="678">
+        <interface id="0" name="e0" type="ethernet" network_id="1"/>
+        <interface id="1" name="e1" type="ethernet" network_id="3"/>
+        <interface id="2" name="e2" type="ethernet" network_id="6"/>
+        <interface id="6" name="e6" type="ethernet" network_id="11"/>
+        <interface id="7" name="e7" type="ethernet" network_id="7"/>
+      </node>
+      <node id="3" name="freertr3" type="qemu" template="linux" image="linux-freertr-20.8.1" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="8" uuid="ae1560f5-e68c-4f12-acd9-c95b35b45f6d" shutdown="1" firstmac="50:06:00:03:00:00" qemu_nic="e1000" delay="0" icon="Router.png" config="0" left="765" top="678">
+        <interface id="0" name="e0" type="ethernet" network_id="2"/>
+        <interface id="1" name="e1" type="ethernet" network_id="3"/>
+        <interface id="2" name="e2" type="ethernet" network_id="4"/>
+        <interface id="6" name="e6" type="ethernet" network_id="8"/>
+        <interface id="7" name="e7" type="ethernet" network_id="7"/>
+      </node>
+      <node id="4" name="freertr4" type="qemu" template="linux" image="linux-freertr-20.8.1" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="8" uuid="a3fa0637-5bfc-441f-9645-759cb97b918c" shutdown="1" firstmac="50:06:00:04:00:00" qemu_nic="e1000" delay="0" icon="Router.png" config="0" left="768" top="417">
+        <interface id="0" name="e0" type="ethernet" network_id="2"/>
+        <interface id="1" name="e1" type="ethernet" network_id="5"/>
+        <interface id="2" name="e2" type="ethernet" network_id="6"/>
+        <interface id="5" name="e5" type="ethernet" network_id="12"/>
+        <interface id="6" name="e6" type="ethernet" network_id="9"/>
+        <interface id="7" name="e7" type="ethernet" network_id="7"/>
+      </node>
+      <node id="5" name="mikrotik1" type="qemu" template="mikrotik" image="mikrotik-6.47.1" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="4" uuid="94d6a3ad-f13f-43f3-9660-6070759c159d" firstmac="50:06:00:05:00:00" delay="0" icon="Router.png" config="0" left="939" top="534">
+        <interface id="0" name="eth1" type="ethernet" network_id="9"/>
+        <interface id="1" name="eth2" type="ethernet" network_id="8"/>
+        <interface id="2" name="eth3" type="ethernet" network_id="10"/>
+      </node>
+      <node id="6" name="host6" type="qemu" template="linux" image="linux-ubuntu-srv-18.04.4" console="vnc" cpu="1" cpulimit="0" ram="2048" ethernet="1" uuid="8250e91c-be43-4533-8fdc-03eb797c7fdd" shutdown="1" firstmac="50:06:00:06:00:00" delay="0" icon="Server.png" config="0" left="951" top="663">
+        <interface id="0" name="e0" type="ethernet" network_id="10"/>
+      </node>
+      <node id="7" name="host7" type="qemu" template="linux" image="linux-ubuntu-srv-18.04.4" console="vnc" cpu="1" cpulimit="0" ram="2048" ethernet="1" uuid="6cb67def-1cec-467d-b305-094a6a1ac50f" shutdown="1" firstmac="50:06:00:07:00:00" delay="0" icon="Server.png" config="0" left="945" top="399">
+        <interface id="0" name="e0" type="ethernet" network_id="12"/>
+      </node>
+      <node id="8" name="host8" type="qemu" template="linux" image="linux-ubuntu-srv-18.04.4" console="vnc" cpu="1" cpulimit="0" ram="2048" ethernet="1" uuid="9f172935-2380-4984-8e7a-def0fca980be" shutdown="1" firstmac="50:06:00:08:00:00" delay="0" icon="Server.png" config="0" left="333" top="666">
+        <interface id="0" name="e0" type="ethernet" network_id="11"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-freertr2iface_0" left="567" top="499" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="3" type="bridge" name="Net-freertr3iface_1" left="858" top="493" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="6" type="bridge" name="Net-freertr4iface_2" left="837" top="235" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="4" type="bridge" name="Net-freertr3iface_2" left="852" top="505" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="2" type="bridge" name="Net-freertr3iface_0" left="852" top="505" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="5" type="bridge" name="Net-freertr1iface_1" left="567" top="244" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="7" type="pnet1" name="MGMT_Net" left="621" top="252" style="Solid" linkstyle="Straight" color="" label="" visibility="1"/>
+      <network id="9" type="bridge" name="Net-mikrotik1iface_0" left="999" top="574" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="8" type="bridge" name="Net-mikrotik1iface_1" left="999" top="574" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="10" type="bridge" name="Net-host6iface_0" left="1020" top="703" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="11" type="bridge" name="Net-host8iface_0" left="393" top="703" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="12" type="bridge" name="Net-host7iface_0" left="1008" top="418" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+    </networks>
+  </topology>
+</lab>

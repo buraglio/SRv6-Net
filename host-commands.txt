@@ -1,0 +1,35 @@
+Host commands
+
+host3
+ip address add address 10.33.33.2/24 dev ens3
+ip route add default via 10.33.33.1
+ifconfig ens3 up
+
+host4
+ip address add address 10.44.44.2/24 dev ens3
+ip route add default via 10.44.44.1
+ifconfig ens3 up
+
+
+host6
+ip address add address 10.66.66.2/24 dev ens3
+ip route add default via 10.66.66.1
+ifconfig ens3 up
+
+
+full-table-Linux
+from screen session
+sudo ip address add 10.255.6.250/24 dev eth1
+sudo ifconfig eth0 up
+ssh in
+ssh -l bgpuser 10.255.6.250 -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss
+add gobgpd.conf file
+/usr/bin/gobgpd -f gobgp.conf
+sudo ip address add 172.16.1.2/30 dev eth1
+sudo ip -6 address add 2001:DB8:998::2/126 dev eth1
+sudo ifconfig eth1 up
+sudo gobgp mrt inject global
+
+Useful link
+http://arthurchiao.art/blog/gobgp-cheat-sheet/
+

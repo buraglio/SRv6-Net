@@ -1,0 +1,11 @@
+/interface ethernet
+set [ find default-name=ether1 ] comment=rtr4
+set [ find default-name=ether2 ] comment=rtr3
+set [ find default-name=ether3 ] comment=host6
+set [ find default-name=ether4 ] comment=mgmt
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip address
+add address=100.127.255.5/24 interface=ether4 network=100.127.255.0
+/ip dhcp-client
+add disabled=no interface=ether1
