@@ -19,15 +19,16 @@ ifconfig ens3 up
 
 full-table-Linux
 from screen session
-sudo ip address add 10.255.6.250/24 dev eth1
+sudo ip address add 10.255.6.252/24 dev eth1
 sudo ifconfig eth0 up
 ssh in
-ssh -l bgpuser 10.255.6.250 -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss
-add gobgpd.conf file
-/usr/bin/gobgpd -f gobgp.conf
+ssh -l bgpuser 10.255.6.252 -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss
+
 sudo ip address add 172.16.1.2/30 dev eth1
 sudo ip -6 address add 2001:DB8:998::2/126 dev eth1
 sudo ifconfig eth1 up
+-add gobgpd.conf file
+/usr/bin/gobgpd -f gobgp.conf
 sudo gobgp mrt inject global
 
 Useful link

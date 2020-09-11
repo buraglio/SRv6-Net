@@ -1,14 +1,11 @@
-vsr1            10.255.254.1      Nokia    admin/admin   ssh
-vsr2            10.255.254.2      Nokia    admin/admin   ssh
-vsr3            10.255.254.3      Nokia    admin/admin   ssh
-vsr4            10.255.254.4      Nokia    admin/admin   ssh
-vsr5            10.255.254.5      Nokia    admin/admin   ssh
-vsr6            10.255.254.6      Nokia    admin/admin   ssh
-vmx7            10.255.254.7      Juniper  root/Juniper  ssh
-transit         10.255.254.179    Mikrotik admin/none    telnet
-fulltable-linux 10.255.254.250    Ubuntu bgpuser/bgpuser ssh
+freertr1            10.255.6.1      Nokia    none/none       telnet
+freertr2            10.255.6.2      Nokia    none/none       telnet
+freertr3            10.255.6.3      Nokia    none/none       telnet
+freertr4            10.255.6.4      Nokia    none/none       telnet
+transit             10.255.6.253    Mikrotik admin/none      telnet
+fulltable-linux     10.255.6.252    Ubuntu   bgpuser/bgpuser ssh
 
 
 Example for newer ssh version access:
 
-ssh -o KexAlgorithms=diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-dss 10.255.254.1 -l admin
+ssh -o KexAlgorithms=diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-dss 10.255.6.1 -l admin
