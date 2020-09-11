@@ -1,13 +1,13 @@
 Host commands
 
-host3
-ip address add address 10.33.33.2/24 dev ens3
-ip route add default via 10.33.33.1
+host8
+ip address add address 10.88.88.2/24 dev ens3
+ip route add default via 10.88.88.1
 ifconfig ens3 up
 
-host4
-ip address add address 10.44.44.2/24 dev ens3
-ip route add default via 10.44.44.1
+host7
+ip address add address 10.77.77.2/24 dev ens3
+ip route add default via 10.77.77.1
 ifconfig ens3 up
 
 
@@ -32,4 +32,3 @@ sudo gobgp mrt inject global
 
 Useful link
 http://arthurchiao.art/blog/gobgp-cheat-sheet/
-
